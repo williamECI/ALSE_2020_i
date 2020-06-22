@@ -1,0 +1,13 @@
+#include "Muestreador.h"
+#include "Dato.h"
+#include <iostream>
+
+bool Dato::tomarDato(){
+    if (h = 0 && l){
+        
+    }
+    
+    else{
+        
+    }
+}
