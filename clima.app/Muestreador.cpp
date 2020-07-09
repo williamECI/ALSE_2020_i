@@ -1,34 +1,47 @@
+
 #include "Muestreador.h"
 #include "Dato.h"
 #include <iostream>
-
+/*
 bool Dato::tomarDato(){
-    if (h = 0 && v = 0 && d = 0 && la = 0 && lo = 0 && a = 0){
-        return false;
+    if (h = 0 && l){
+        
     }
-
+    
     else{
-        return true;
+        
     }
 }
+*/
+Dato Muestreador::promedio ( Dato vector[12] ) {
+    Dato dato_promedio;
 
+    for (int i = 0; i < 12; i++){
 
-Dato::Dato promedio( vector ){
+        float tp += ( vector[i].getTemperatura() / 12 );
+        dato_promedio.setTemperatura(tp);
 
-    Dato::Dato dato_promedio;
+        unsigned chat hp += ( vector[i].getHumedad() / 12 );
+        dato_promedio.setHumedad(hp);
 
-    int l = sizeof ( vector )/sizeof( *vector );
+        float vp += ( vector[i].getVeloviento() / 12 );
+        dato_promedio.setVeloviento(vp);
 
-    for (int i = 0; i < l; i++){
+        int dp += ( vector[i].getDirviento() / 12 );
+        dato_promedio.setDirviento(dp);
 
-        dato_promedio.setAltura() += vector[i].getAltura() ;
-        dato_promedio.setHumedad() += vector[i].getHumedad() ;
-        dato_promedio.setDirviento() += vector[i].getDirviento() ;
-        dato_promedio.setLatitud()+= vector[i].getLatitud() ;
-        dato_promedio.setLongitud()+= vector[i].getLongitud() ;
-        dato_promedio.setTemperatura() += vector[i].getTemperatura() ;
-        dato_promedio.setVeloviento(); += vector[i].getVeloviento() ;
-    }
+        double lap += ( vector[i].getLatitud() / 12 );
+        dato_promedio.setLatitud(lap);
+
+        double lop += ( vector[i].getLongitud() / 12 );
+        dato_promedio.setLongitud(lop);
+
+        double ap += ( vector[i].getAltura() / 12 );
+        dato_promedio.setAltura(ap);
+        }
+
+    return dato_promedio;
 
 
 }
+

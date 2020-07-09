@@ -9,6 +9,8 @@ class Dato{
 public:
     Dato (float t = 0., unsigned char h = 0, float v = 0., int d = 0, double la = 0., double lo = 0., double a = 0. );
 
+    friend ostream& operator<<(ostream& stream, Dato& dato);
+
     void setTemperatura (float t) { _temperatura = t; };
     float getTemperatura () { return _temperatura; };
 

@@ -1,7 +1,9 @@
 #include <iostream>
 #include "Dato.h"
 
-Dato::Dato(float t = 0., unsigned char h = 0, float v = 0., int d = 0, double la = 0., double lo = 0., double a = 0. ){
+using namespace std;
+
+Dato::Dato(float t , unsigned char h, float v , int d, double la, double lo, double a ){
     _temperatura = t;
     _humedad = h;
     _veloviento = v;
@@ -9,4 +11,13 @@ Dato::Dato(float t = 0., unsigned char h = 0, float v = 0., int d = 0, double la
     _latitud = la;
     _longitud = lo;
     _altura = a;
+}
+
+ostream& operator<<(ostream& stream, Dato& dato) {
+    stream  << "temperatura: " << dato.getTemperatura() << "   humedad: " << dato.getHumedad() <<
+               "   velocidad del viento: " << dato.getVeloviento() << "   direción de viento: " << dato.getDirviento() <<
+               "   latitud: " << dato.getLatitud() << "  longitud: " << dato.getLongitud() << "   altura: " <<
+               dato.getAltura();
+
+    return stream;
 }
