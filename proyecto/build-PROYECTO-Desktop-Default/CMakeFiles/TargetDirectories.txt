@@ -1,0 +1,4 @@
+/home/william/ALSE_2020_i/proyecto/build-PROYECTO-Desktop-Default/CMakeFiles/rebuild_cache.dir
+/home/william/ALSE_2020_i/proyecto/build-PROYECTO-Desktop-Default/CMakeFiles/clima.dir
+/home/william/ALSE_2020_i/proyecto/build-PROYECTO-Desktop-Default/CMakeFiles/edit_cache.dir
+/home/william/ALSE_2020_i/proyecto/build-PROYECTO-Desktop-Default/CMakeFiles/clima_autogen.dir
