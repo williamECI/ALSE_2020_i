@@ -8,9 +8,13 @@ int main(int argc, char *argv[])
 {    
     QCoreApplication a( argc , argv );
 
-    Dato v (1, 2., 3., 4, 5., 6., 7.);
+    /*Dato v (1, 50, 3., 4, 5., 6., 7.);
     DB_local x;
-    x.guardar_dato(v, 12, 30);
+    x.guardar_dato(v, 12, 30);*/
+
+    DB_local x;
+    x.borrar_DB();
+
 
 
  /*   std::time_t f = std::time(nullptr);

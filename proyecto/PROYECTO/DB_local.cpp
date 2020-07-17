@@ -59,18 +59,21 @@ bool DB_local::guardar_dato(Dato &b, const int &hor, const int &min)
     int rc;
     char *zErrMsg = 0;
 
-    sqlstream << "INSERT INTO TBL_SENSORES ( Hora, Minuto, Temperatura, Humedad, Velo_viento, Dir_viento, Latitud, Longitud, Altura )";
+    sqlstream << "INSERT INTO TBL_SENSORES ( Hora, Minuto, Temperatura, Humedad, Velo_viento, Dir_viento, Latitud, Longitud, Altura ) ";
     sqlstream << "VALUES (";
     sqlstream << hor << ", " << min << ", ";
     sqlstream << b.getTemperatura() << ", ";
-    sqlstream << b.getHumedad() << ", ";
+    sqlstream << (int)b.getHumedad() << ", ";
     sqlstream << b.getVeloviento() << ", ";
     sqlstream << b.getDirviento() << ", ";
     sqlstream << b.getLatitud() << ", ";
     sqlstream << b.getLongitud() << ", ";
     sqlstream << b.getAltura() << " );";
 
+    std::cout << sqlstream.str() << std::endl;
+
     string sql ( sqlstream.str() );
+
 
     rc = sqlite3_exec(ddb, sql.c_str(), NULL, 0, &zErrMsg);
 
@@ -108,7 +111,9 @@ Dato DB_local::getdato_minuto( const int &h,  const int &m)
 
    abrir_DB();
 
-   sqlstream << "SELECT from TBL_SENSORES WHERE Hora = " << h "AND Minuto = " << m ;
+   sqlstream << "SELECT Hora, Minuto, Temperatura, Humedad, Velo_viento, Dir_viento, Latitud, Longitud, Altura FROM TBL_SENSORES  WHERE Hora = " ;
+   sqlstream << h << " AND Minuto = " ;
+   sqlstream << m << " ;" ;
 
    string sql ( sqlstream.str() );
 
@@ -133,11 +138,11 @@ bool DB_local::crear_DB(){
 
     abrir_DB();
 
-    sqlstr = "CREATE TABLE TBL_SENSORES2 (Hora REAL PRIMARY KEY NOT NULL, Minuto REAL PRIMARY KEY NOT NULL, Temperatura REAL NOT NULL," \
+    sqlstr = "CREATE TABLE TBL_SENSORES2 (Hora REAL NOT NULL, Minuto REAL NOT NULL, Temperatura REAL NOT NULL," \
        "Humedad INTEGER NOT NULL, Velo_viento REAL NOT NULL," \
        "Dir_viento REAL NOT NULL, Latitud REAL NOT NULL, Longitud REAL NOT NULL, Altitud REAL NOT NULL );";
 
-    /* Execute SQL statement */
+
     rc = sqlite3_exec(ddb, sqlstr.c_str(), callback, 0, &zErrMsg);
 
     if( rc != SQLITE_OK ){
@@ -156,16 +161,16 @@ bool DB_local::crear_DB(){
 bool DB_local::borrar_DB(){
 
     int rc;
-    string sql;
+    char *sql;
     char *zErrMsg = 0;
-    const char* data = "Callback function called";
 
     abrir_DB();
 
-    sql = "DELETE from TBL_SENSORES WHERE hora !=66; ";
+    sql = "DELETE from TBL_SENSORES WHERE hora != 66; ";
 
 
-    rc = sqlite3_exec(ddb, sql, callback, (void*)data, &zErrMsg);
+    rc = sqlite3_exec(ddb, sql, NULL, 0, &zErrMsg);
+
 
     if( rc != SQLITE_OK ) {
        fprintf(stderr, "SQL error: %s\n", zErrMsg);
