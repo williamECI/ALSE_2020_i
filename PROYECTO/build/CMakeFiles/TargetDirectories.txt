@@ -1,0 +1,4 @@
+/home/alse-i/Documentos/ALSE_Santiago_Ortiz_20_I/PROYECTO/build/CMakeFiles/rebuild_cache.dir
+/home/alse-i/Documentos/ALSE_Santiago_Ortiz_20_I/PROYECTO/build/CMakeFiles/clima.dir
+/home/alse-i/Documentos/ALSE_Santiago_Ortiz_20_I/PROYECTO/build/CMakeFiles/edit_cache.dir
+/home/alse-i/Documentos/ALSE_Santiago_Ortiz_20_I/PROYECTO/build/CMakeFiles/clima_autogen.dir
