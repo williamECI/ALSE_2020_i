@@ -9,15 +9,16 @@ using namespace std;
 class Muestreador {
 public:
     bool tomarDato();
-    std::Dato promedio();
-    Dato vector[12];
-    void setTamanio (int t) {_tamanio = t; };
-    int getTamanio () {return _tamanio; };
+    Dato promedio();
+
+    //void setTamanio (int t) {_tamanio = t; };
+    //int getTamanio () {return _tamanio; };
 
 
 
 private:
-    int _tamanio;
+    Dato _datos[12];
+    //int _tamanio;
 
 
 

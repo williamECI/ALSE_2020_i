@@ -4,19 +4,23 @@
 #include <iostream>
 /*
 bool Dato::tomarDato(){
-    if (h = 0 && l){
+    if (h = 0 && l = 0 && t = 0 && v = 0 && d = 0 && la = 0 && lo = 0 && a = 0 ){
+       return false;
         
     }
     
     else{
+        return true;
         
     }
 }
 */
-Dato Muestreador::promedio ( Dato vector[12] ) {
+
+Dato Muestreador::promedio ( ) {
     Dato dato_promedio;
 
     for (int i = 0; i < 12; i++){
+        this->_datos[i].getAltura()
 
         float tp += ( vector[i].getTemperatura() / 12 );
         dato_promedio.setTemperatura(tp);
